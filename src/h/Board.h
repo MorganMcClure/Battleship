@@ -1,6 +1,5 @@
 #pragma once
 #include "Tile.h"
-#include <iostream>
 #include <array>
 
 class Board

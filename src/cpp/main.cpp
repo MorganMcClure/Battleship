@@ -1,12 +1,12 @@
 #include <iostream>
+#include <sstream>
 #include "../h/Board.h"
 
 int main() 
 {
     Board b;
-    std::string coordinates;
+    b.PrintBoard();
 	std::string input;
 	std::getline(std::cin, input);
-    b.PrintBoard();
     //b.MissileImpact(input);
 }
