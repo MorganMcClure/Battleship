@@ -1,8 +1,7 @@
 #pragma once
-#include <iostream>
-#include <sstream>
-#include <array>
 #include "Tile.h"
+#include <iostream>
+#include <array>
 
 class Board
 {
@@ -15,5 +14,5 @@ public:
     Board();
     ~Board() = default;
     void PrintBoard();
-    void MissileImpact();
+    void MissileImpact(std::string);
 };

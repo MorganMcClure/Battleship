@@ -3,5 +3,10 @@
 
 int main() 
 {
-    Board b = Board();
+    Board b;
+    std::string coordinates;
+	std::string input;
+	std::getline(std::cin, input);
+    b.PrintBoard();
+    //b.MissileImpact(input);
 }
