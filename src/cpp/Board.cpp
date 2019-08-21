@@ -1,31 +1,42 @@
 #include "../h/Board.h"
-#include <iostream>
 
-Board::Board(int dim) : x_dim(dim), y_dim(dim)
+//Some day there'll be a rectangular board, not just square
+Board::Board() 
 {
-    if(dim < MAX_SIZE)
+    for(int y = 0; y < NUM_COLS; ++y)
     {
-        char alphabetStart = 'A';
-        int numberStart = 0;
-
-        for(int i = 0; i < dim; ++i)
+        for(int x = 1; x <= NUM_ROWS; ++x) 
         {
-            std::cout << alphabetStart++ << " : " << numberStart++ << std::endl;
+            Gameboard[x][y].status = TileStatus::Water;
         }
+    }
+    PrintBoard();
+}
 
+void Board::PrintBoard()
+{
+    char letter = 'A';
+    int letterOffset = (int)letter - ALPHABET_OFFSET;
+    std::cout << "\n     ";
+    //Eliminate this for loop?
+    for(int y = 0; y < NUM_COLS; ++y)
+    {
+        std::cout << letter++ << "    ";
+    }
+    std::cout << "\n   --------------------------------------------------" <<std::endl;
+    for(int y = 0; y < NUM_COLS; ++y)
+    {
+        int rowNo = y + 1;
+        std::cout << rowNo << (rowNo >= 10 ? " " : "  ");
+        for(int x = 1; x <= NUM_ROWS; ++x) 
+        {
+            std::cout << "[ " << (char)Gameboard[0][0].status << " ]";
+        }
+        std::cout << "\n   --------------------------------------------------" <<std::endl;
     }
 }
 
-Board::~Board() 
-{
-    
-}
-void PrintBoard()
-{
-
-}
-
-void MissileImpact()
+void Board::MissileImpact()
 {
     
 }

@@ -1,16 +1,19 @@
 #pragma once
-#include <map>
+#include <iostream>
+#include <sstream>
+#include <array>
 #include "Tile.h"
 
 class Board
 {
-    const int MAX_SIZE = 26;
-    int x_dim = 10;
-    int y_dim = 10;
-    std::map<char*, Tile> Gameboard;
+    static constexpr int NUM_ROWS = 10;
+    static constexpr int NUM_COLS = 10;
+    static constexpr int ALPHABET_OFFSET = 65;
+    using Row = std::array<Tile, NUM_COLS>;
+    std::array<Row, NUM_ROWS> Gameboard;
 public:
-    Board(int dim);
-    ~Board();
+    Board();
+    ~Board() = default;
     void PrintBoard();
     void MissileImpact();
 };
