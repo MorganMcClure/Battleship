@@ -1,6 +1,6 @@
 #pragma once
 
-enum class TileStatus {Water = ' ', Ship = 'B', Missile = 'X'};
+enum class TileStatus: char {Water = ' ', Ship = 'B', Missile = 'X'};
 
 class Tile 
 {

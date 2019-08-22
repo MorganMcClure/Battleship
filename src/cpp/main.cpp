@@ -4,9 +4,20 @@
 
 int main() 
 {
+    bool gameOver = false;
     Board b;
-    b.PrintBoard();
-	std::string input;
-	std::getline(std::cin, input);
-    //b.MissileImpact(input);
+    //b.PrintBoard();
+
+    while(!gameOver) 
+    {
+    	std::string input;
+	    std::getline(std::cin, input);
+        if(input == "x")
+        { 
+            gameOver = true;
+            continue;
+        }
+        b.MissileImpact(input);
+        b.PrintBoard();
+    }
 }

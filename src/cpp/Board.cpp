@@ -1,6 +1,7 @@
 #include "../h/Board.h"
 #include <iostream>
 #include <sstream>
+#include <ctype.h>
 
 //Some day there'll be a rectangular board, not just square
 Board::Board() 
@@ -25,11 +26,10 @@ void Board::PrintBoard()
 
 void Board::MissileImpact(std::string coordinates)
 {
-    int colCoord = static_cast<int>(coordinates[0]) - ALPHABET_OFFSET;
-    int rowCoord = std::stoi(coordinates.substr(1, coordinates.length()));
-    
+    int colCoord = (int)(toupper(coordinates[0])) - ALPHABET_OFFSET;
+    int rowCoord = std::stoi(coordinates.substr(1, coordinates.length())) - 1;
     if(Gameboard[colCoord][rowCoord].GetStatus() != TileStatus::Missile)
     {
-
+        Gameboard[colCoord][rowCoord].SetStatus(TileStatus::Missile);
     }
 }

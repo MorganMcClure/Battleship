@@ -12,5 +12,5 @@ Tile::~Tile()
 
 void Tile::SetStatus(TileStatus newStatus)
 {
-
+    status = TileStatus::Missile;
 }
